@@ -5,3 +5,4 @@ fs.readFile("file.txt", "utf8", (err, data) => { // non blocking because the eve
 });
 
 console.log("This runs IMMEDIATELY");
+
