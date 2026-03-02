@@ -5,5 +5,5 @@ it basically simplifies server-side coding by providing a layer of fundamental w
 
 - routing management
 - middleware services
-- API dev
+- API dev - efficient creation of RESTful apis
 - community and plugins
