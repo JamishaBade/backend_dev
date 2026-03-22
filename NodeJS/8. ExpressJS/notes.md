@@ -8,8 +8,6 @@ it basically simplifies server-side coding by providing a layer of fundamental w
 - API dev - efficient creation of RESTful apis
 - community and plugins
 
-
-
 ## routing
 
 
