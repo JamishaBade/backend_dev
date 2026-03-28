@@ -1,5 +1,4 @@
-# Database
-## relational database
+# Database (MySQL)
 
 Database is a collection of data in a format tha can be easily accessible.
 There are two types of databases: Relational and Non-relational
@@ -76,4 +75,63 @@ VALUES
 ### Print the table
 ```
 SELECT * FROM studentLog;
+SELECT id, gradeLevel FROM studentLog;
+```
+
+
+## Keys
+- Primary Key: uniquely identifies the row. Only one primary key and cannot be null.
+- Foreign Key: It refers to the primary key of other rows. There can be duplicates, multiple FKs and also can be null.
+
+## Constraints
+It is used to specify rules for data in a table
+
+1. NOT NULL - column cannot have a null value
+2. UNIQUE - all values in column are unique.
+3. PRIMARY KEY - makes a column and not null but only used for one.
+
+
+#### Compound constraints
+
+#####  Primary Key
+while creating a table you can put compound constraints 
+```
+CREATE TABLE companyName
+(
+    id INT,
+    companyName VARCHAR(50),
+    CEO VARCHAR(50),
+    PRIMARY KEY (id, CEO)
+)
+```
+
+```
+INSERT INTO companyName
+(id, companyName, CEO)
+VALUES
+(101, "Duolingo", "Luis"),
+(102, "reCAPTCHA", "Luis")
+```
+
+This means that the combination of the id and CEO has to be unique even if CEO or the id individually is different
+
+##### Foreign Key
+```
+CREATE TABLE temp
+(
+    cust_id int,
+    FOREIGN KEY (cust_id) references customer(id)
+)
+
+Created a table called temp
+created a column called cust_id that stores integer
+assigned cust_id as a Foreign key that referes to the customer id.
+```
+
+##### CHECK constraint
+```
+CREATE TABLE newTab
+(
+    age INT CHECK (age>18)
+);
 ```
